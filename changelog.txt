@@ -1,4 +1,6 @@
-= Unreleased — 23/08/2026 =
+= Unreleased — 22/10/2026 =
+* Corretto il clamp delle coordinate finite oltre il range degli interi PHP: il limite viene applicato prima del cast, evitando valori sul bordo errato in caso di overflow.
+* Aggiunte regressioni standalone per arrotondamento, estremi e input non validi.
 * Rigenerati i bundle contro il package condiviso corrente, includendo il refresh visuale e gli asset RTL; contratti runtime invariati.
 
 = 1.2.2 — 22/08/2026 =

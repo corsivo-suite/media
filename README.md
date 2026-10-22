@@ -102,6 +102,8 @@ wp eval-file wp-content/plugins/corsivo-focal-point/tests/smoke.php
 
 Lo smoke copre sanitizzazione, rendering HTML, schema REST, deduplica/rollback, autosave, integrità e restore revisioni, WPML copy-once e diagnostica. Crea contenuti temporanei e fallisce con `RuntimeException` se trova errori. `.distignore` esclude `tests/` dal pacchetto.
 
+Senza WordPress, `php tests/data-regressions.php` verifica arrotondamento, limiti e input non validi delle coordinate, inclusi numeri finiti maggiori del range degli interi PHP. Il clamp precede la conversione a intero per evitare che un overflow sposti il focal point sul bordo opposto.
+
 ## Extension point
 
 Il filtro `corsivo_focal_point_post_types` è il punto corretto per abilitare CPT di progetto. Per template con background o markup non prodotto da `post_thumbnail_html`, usare le funzioni getter e applicare esplicitamente la stringa restituita. Per scritture programmatiche usare `corsivo_focal_point_update_position()` e, se il consumer deve reagire, emettere o ascoltare `corsivo_focal_point_position_updated` rispettando lo stato precedente.
@@ -135,6 +137,7 @@ Il plugin non genera crop e non modifica Open Graph/Twitter. Interviene solo sul
 - `assets/classic-editor.js` — fallback classic legacy.
 - `assets/editor.css` — minime correzioni layout condivise dai due editor.
 - `tests/smoke.php` — smoke WP-CLI end-to-end.
+- `tests/data-regressions.php` — regressioni isolate sulla sanitizzazione delle coordinate.
 - `tests/admin-assets-smoke.php` — gate build, manifest, dipendenze e RTL.
 
 Non sono presenti `node_modules/`, `vendor/` o `libs/tcpdf/`; non ci sono dipendenze terze da raggruppare.

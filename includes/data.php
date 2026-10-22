@@ -52,7 +52,7 @@ function corsivo_focal_point_sanitize_coordinate( $value ) {
 		return 50;
 	}
 
-	return max( 0, min( 100, (int) round( $coordinate ) ) );
+	return (int) max( 0, min( 100, round( $coordinate ) ) );
 }
 
 function corsivo_focal_point_sanitize_attachment_id( $value ) {
