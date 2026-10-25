@@ -6,6 +6,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 function corsivo_focal_point_get_post_types() {
 	$settings   = corsivo_focal_point_get_settings();
+	if ( isset( $settings['focal_point_enabled'] ) && ! $settings['focal_point_enabled'] ) {
+		return array();
+	}
 	$post_types = $settings['post_types'];
 
 	if ( $settings['woocommerce_enabled'] && corsivo_focal_point_is_woocommerce_active() ) {

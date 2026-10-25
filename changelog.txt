@@ -1,4 +1,8 @@
-= Unreleased — 22/10/2026 =
+= 1.3.0 - 25/10/2026 =
+* Evoluzione in Corsivo Media: pagina Media → Impostazioni media con Punto focale, Ottimizzazione, Formati, Integrazioni e Dati.
+* Moduli indipendenti per punto focale, qualità/dimensioni e WebP sui soli nuovi caricamenti JPEG/PNG statici, con conservazione degli originali.
+* Nessuna conversione retroattiva; i nuovi moduli sono opt-in e la configurazione Focal Point esistente resta valida.
+* Conservate identità tecnica, API pubbliche, meta e canale aggiornamenti; redirect dei collegamenti amministrativi precedenti.
 * Corretto il clamp delle coordinate finite oltre il range degli interi PHP: il limite viene applicato prima del cast, evitando valori sul bordo errato in caso di overflow.
 * Aggiunte regressioni standalone per arrotondamento, estremi e input non validi.
 * Rigenerati i bundle contro il package condiviso corrente, includendo il refresh visuale e gli asset RTL; contratti runtime invariati.

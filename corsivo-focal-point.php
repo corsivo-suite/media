@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: Corsivo Focal Point
- * Description: Seleziona un punto focale per le immagini in evidenza e applica object-position al rendering frontend.
- * Version: 1.2.2
+ * Plugin Name: Corsivo Media
+ * Description: Punto focale per le immagini in evidenza e ottimizzazione dei nuovi caricamenti: qualità, dimensioni e WebP.
+ * Version: 1.3.0
  * Requires at least: 6.6
  * Requires PHP: 8.1
  * Author: Salvatore Corsi
@@ -16,7 +16,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'CORSIVO_FOCAL_POINT_VERSION', '1.2.2' );
+// Keep the historical plugin identity and public API compatible with installed sites.
+define( 'CORSIVO_FOCAL_POINT_VERSION', '1.3.0' );
 define( 'CORSIVO_FOCAL_POINT_FILE', __FILE__ );
 define( 'CORSIVO_FOCAL_POINT_PATH', plugin_dir_path( __FILE__ ) );
 define( 'CORSIVO_FOCAL_POINT_URL', plugin_dir_url( __FILE__ ) );
@@ -28,6 +29,7 @@ define( 'CORSIVO_FOCAL_POINT_REVISION_MARKER', '_corsivo_focal_point_revision_ve
 define( 'CORSIVO_FOCAL_POINT_REVISION_SCHEMA_VERSION', '1' );
 
 require_once CORSIVO_FOCAL_POINT_PATH . 'includes/settings.php';
+require_once CORSIVO_FOCAL_POINT_PATH . 'includes/media-processing.php';
 require_once CORSIVO_FOCAL_POINT_PATH . 'includes/data.php';
 require_once CORSIVO_FOCAL_POINT_PATH . 'includes/editor.php';
 require_once CORSIVO_FOCAL_POINT_PATH . 'includes/frontend.php';
