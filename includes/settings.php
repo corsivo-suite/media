@@ -181,7 +181,7 @@ function corsivo_media_render_upload_settings( $settings ) {
 	$option = CORSIVO_FOCAL_POINT_SETTINGS_OPTION;
 	$webp_supported = wp_image_editor_supports( array( 'mime_type' => 'image/webp' ) );
 	?>
-	<section id="media-section-optimization" data-corsivo-section="optimization" aria-labelledby="media-optimization-title">
+	<section id="optimization" data-corsivo-section="optimization" aria-labelledby="media-optimization-title">
 		<h2 id="media-optimization-title"><?php esc_html_e( 'Ottimizzazione', 'corsivo-focal-point' ); ?></h2>
 		<p><?php esc_html_e( 'Riduci il peso e le dimensioni delle nuove immagini JPEG e PNG. Il file originale viene conservato.', 'corsivo-focal-point' ); ?></p>
 		<table class="form-table" role="presentation">
@@ -208,7 +208,7 @@ function corsivo_media_render_upload_settings( $settings ) {
 		</table>
 		<p class="corsivo-media-note"><?php esc_html_e( 'L’originale resta disponibile: conservare sia l’originale sia la versione ottimizzata può aumentare lo spazio occupato sul server.', 'corsivo-focal-point' ); ?></p>
 	</section>
-	<section id="media-section-formats" data-corsivo-section="formats" aria-labelledby="media-formats-title">
+	<section id="formats" data-corsivo-section="formats" aria-labelledby="media-formats-title">
 		<h2 id="media-formats-title"><?php esc_html_e( 'Formati', 'corsivo-focal-point' ); ?></h2>
 		<p><?php esc_html_e( 'Scegli il formato delle nuove immagini. La conversione può essere attivata anche senza cambiare qualità e dimensioni.', 'corsivo-focal-point' ); ?></p>
 		<table class="form-table" role="presentation">
@@ -256,7 +256,7 @@ function corsivo_focal_point_render_settings_page() {
 					<a class="corsivo-admin-workspace__section" href="#data" data-corsivo-section-link><?php esc_html_e( 'Dati', 'corsivo-focal-point' ); ?></a>
 				</nav>
 				<div class="corsivo-admin-workspace__content">
-			<section id="focal-section-contents" data-corsivo-section="contents" aria-labelledby="focal-contents-title">
+			<section id="contents" data-corsivo-section="contents" aria-labelledby="focal-contents-title">
 
 			<h2 id="focal-contents-title"><?php echo esc_html__( 'Punto focale', 'corsivo-focal-point' ); ?></h2>
 			<p><?php esc_html_e( 'Scegli il soggetto da mantenere visibile nelle immagini in evidenza. Ogni contenuto conserva la propria inquadratura.', 'corsivo-focal-point' ); ?></p>
@@ -294,7 +294,7 @@ function corsivo_focal_point_render_settings_page() {
 
 			</section>
 			<?php corsivo_media_render_upload_settings( $settings ); ?>
-			<section id="focal-section-integrations" data-corsivo-section="integrations" aria-labelledby="focal-integrations-title">
+			<section id="integrations" data-corsivo-section="integrations" aria-labelledby="focal-integrations-title">
 			<h2 id="focal-integrations-title"><?php echo esc_html__( 'Integrazioni', 'corsivo-focal-point' ); ?></h2>
 			<table class="form-table" role="presentation">
 				<tr>
@@ -360,7 +360,7 @@ function corsivo_focal_point_render_settings_page() {
 			</table>
 
 			</section>
-			<section id="focal-section-data" data-corsivo-section="data" aria-labelledby="focal-data-title">
+			<section id="data" data-corsivo-section="data" aria-labelledby="focal-data-title">
 			<h2 id="focal-data-title"><?php echo esc_html__( 'Dati', 'corsivo-focal-point' ); ?></h2>
 			<p><?php esc_html_e( 'Le immagini elaborate e i relativi originali rimangono nella libreria anche disattivando o disinstallando il plugin.', 'corsivo-focal-point' ); ?></p>
 			<table class="form-table" role="presentation">

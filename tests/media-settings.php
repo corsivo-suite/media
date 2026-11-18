@@ -113,7 +113,13 @@ libxml_clear_errors();
 $xpath = new DOMXPath($document);
 media_assert($xpath->query('//form')->length === 1, 'Settings were split into forms with partial save scope.');
 media_assert($xpath->query('//form[@action="options.php"]')->length === 1, 'The native Settings API form destination changed.');
-media_assert($xpath->query('//form//section[@data-corsivo-section]')->length === 5, 'The five media settings sections are not mounted inside the same form.');
+$sections = $xpath->query('//form//section[@data-corsivo-section]');
+media_assert($sections->length === 5, 'The five media settings sections are not mounted inside the same form.');
+foreach ($sections as $section) {
+	$key = $section->getAttribute('data-corsivo-section');
+	$links = $xpath->query('//nav//a[@data-corsivo-section-link][@href="#' . $key . '"]');
+	media_assert($links->length === 1 && $document->getElementById($key) === $section, 'The sidebar link must reach its section without JavaScript: ' . $key);
+}
 media_assert($xpath->query('//form//*[@disabled]')->length === 0, 'Inactive section fields are disabled and would be omitted on save.');
 media_assert($xpath->query('//script')->length === 0, 'A content type label was rendered as executable markup.');
 media_assert(str_contains($html, '&lt;script&gt;alert(1)&lt;/script&gt;'), 'Content type labels were not safely escaped.');
